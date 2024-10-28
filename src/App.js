@@ -14,27 +14,50 @@ const btnValue = [
 ];
 
 function App() {
-  const [calculate, setCalculate] = useState({ sing: "", num: 0, res: 0 });
+  const [calculate, setCalculate] = useState({ sing: "", num: "0", res: 0 });
 
   const numberClickHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
     console.log(e.target.innerHTML);
-    console.log(calculate.num.toString.length);
 
-    if (calculate.num.length < 9) {
+    if (calculate.num.toString.length < 9) {
       setCalculate({
         ...calculate,
         num:
           calculate.num === 0 && value === "0"
             ? "0"
-            : calculate.num % 1 === 0
+            : calculate.num % 1 === "0"
             ? Number(calculate.num + value)
             : calculate.num + value,
         res: !calculate.sign ? 0 : calculate.res,
       });
     }
+    console.log(calculate.num.length);
   };
+
+  // const commaClickHandler = (e) => {
+  //   const value = e.target.innerHTML;
+
+  //   setCalculate({
+  //     ...calculate,
+  //     num: !calculate.num.toString().includes(".")
+  //       ? calculate.num + value
+  //       : calculate.num,
+  //   });
+  // };
+
+  // const signClickHandler = (e) => {
+  //   e.preventDefault();
+  //   const value = e.target.innerHTML;
+
+  //   setCalc({
+  //     ...calc,
+  //     sign: value,
+  //     res: !calc.res && calc.num ? calc.num : calc.res,
+  //     num: 0,
+  //   });
+  // };
 
   const resetClickHandler = () => {
     setCalculate({
@@ -53,8 +76,8 @@ function App() {
           return (
             <Button
               key={i}
-              className={"button"}
-              value={btn}
+              className=""
+              value="0"
               onClick={btn === "C" ? resetClickHandler : numberClickHandler}
             ></Button>
           );
