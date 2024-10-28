@@ -3,7 +3,8 @@ name: Notify Telegram on Push
 on:
   push:
     branches:
-      - master # You can change this to the branch you want to monitor
+      - master
+      - main # You can change this to the branch you want to monitor
 
 jobs:
   notify:
