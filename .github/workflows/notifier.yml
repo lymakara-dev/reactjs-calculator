@@ -5,6 +5,8 @@ on:
     branches:
       - main # You can change this to the branch you want to monitor
 
+      # mix ort jenh jg
+
 jobs:
   notify:
     runs-on: ubuntu-latest
