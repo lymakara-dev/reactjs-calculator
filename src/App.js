@@ -36,28 +36,28 @@ function App() {
     console.log(calculate.num.length);
   };
 
-  // const commaClickHandler = (e) => {
-  //   const value = e.target.innerHTML;
+  const commaClickHandler = (e) => {
+    const value = e.target.innerHTML;
 
-  //   setCalculate({
-  //     ...calculate,
-  //     num: !calculate.num.toString().includes(".")
-  //       ? calculate.num + value
-  //       : calculate.num,
-  //   });
-  // };
+    setCalculate({
+      ...calculate,
+      num: !calculate.num.toString().includes(".")
+        ? calculate.num + value
+        : calculate.num,
+    });
+  };
 
-  // const signClickHandler = (e) => {
-  //   e.preventDefault();
-  //   const value = e.target.innerHTML;
+  const signClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
 
-  //   setCalc({
-  //     ...calc,
-  //     sign: value,
-  //     res: !calc.res && calc.num ? calc.num : calc.res,
-  //     num: 0,
-  //   });
-  // };
+    setCalc({
+      ...calc,
+      sign: value,
+      res: !calc.res && calc.num ? calc.num : calc.res,
+      num: 0,
+    });
+  };
 
   const resetClickHandler = () => {
     setCalculate({
